@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- tailwind-css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google-fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- fontAwesome -->
+    <script src="https://kit.fontawesome.com/f1458b3047.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily:{
+            'anton':["Anton", "sans-serif"],
+            'poppins':["Poppins", "sans-serif"]
+          },
+          backgroundImage:{
+            'mainBackground':"linear-gradient(180.00deg, rgb(232, 85, 222) -7.901%,rgb(108, 14, 235) 36.636%,rgba(84, 0, 238, 0.34) 68.886%)"
+          }
+        }
+      }
+    }
+    </script>
+</head>
+<body class="max-w-[1440px] bg-[#1E1E1E] mx-auto">
+    <div class="h-screen w-[622px] bg-mainBackground fixed top-0 translate-x-[60%] -z-10"></div>
+    <!-- homePageArea-start -->
+    <section class="text-center mt-[150px]" id="homePage">
+        <div>
+            <h1 class="font-anton text-[170px] font-normal text-white uppercase">
+                alphabet clash
+            </h1>
+            <p class="font-poppins text-2xl font-medium capitalize text-white">
+                Unleash Your Keyboard Kung Fu : Press “Enter” to Play
+            </p>
+        </div>
+        <div class="mt-[56px]">
+            <button class="capitalize py-[22px] px-8 bg-white text-2xl font-semibold text-[#010313] rounded-xl" id="playBtn">
+                play now
+            </button>
+        </div>
+    </section>
+    <!-- homepageArea-finish -->
+    <!-- playgroundArea-start -->
+    <!-- playgroundArea-finish -->
+    <!-- script-file -->
+    <script src="./source/script.js"></script>
+</body>
+</html>
