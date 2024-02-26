@@ -26,14 +26,30 @@ function findElement(event){
 function randomWord(word){
     const alphabet ='abcdefghijklmnopqrstuvwxyz';
     const letterArr= alphabet.split("");
-    const randomNum= Math.floor(Math.random() * 27);
+    const randomNum= Math.floor(Math.random() * 26);
     let randomLetter= letterArr[randomNum];
 
     if(displayBoard.innerText.toLocaleLowerCase() == word.innerText){
         randomLetter= letterArr[randomNum];
+        scoreAndLife('score',1);
     }else{
-        console.log('not match')
+        randomLetter = displayBoard.innerText;
+        scoreAndLife('life',1);
     }
 
     displayBoard.innerText = randomLetter;
+}
+
+function scoreAndLife(condition,point){
+    const convertNum = Number(document.getElementById(`${condition}`).innerText);
+
+    if(condition.toLocaleLowerCase() == 'score'){
+        document.getElementById(`${condition}`).innerText = convertNum + point
+    }else{
+        document.getElementById(`${condition}`).innerText = convertNum - point
+    }
+
+    if(convertNum <= 0){
+        playground.classList.add('hidden');
+    }
 }
