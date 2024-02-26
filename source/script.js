@@ -6,8 +6,6 @@ const playBtn = document.getElementById('playBtn');
 body.addEventListener('keyup',(event)=>{
     if(event.key.toLowerCase() == 'enter'){
         currentPageCustom();
-    }else{
-        console.log(event.key)
     }
 });
 
