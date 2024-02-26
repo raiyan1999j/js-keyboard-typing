@@ -20,14 +20,20 @@ function findElement(event){
     targetElement.classList.add('bg-yellow-500');
     targetElement.classList.remove('bg-white');
 
-    randomWord();
+    randomWord(targetElement);
 }
 
-function randomWord(){
+function randomWord(word){
     const alphabet ='abcdefghijklmnopqrstuvwxyz';
     const letterArr= alphabet.split("");
     const randomNum= Math.floor(Math.random() * 27);
-    const randomLetter= letterArr[randomNum];
+    let randomLetter= letterArr[randomNum];
+
+    if(displayBoard.innerText.toLocaleLowerCase() == word.innerText){
+        randomLetter= letterArr[randomNum];
+    }else{
+        console.log('not match')
+    }
 
     displayBoard.innerText = randomLetter;
 }
