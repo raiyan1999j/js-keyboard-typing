@@ -9,17 +9,16 @@ continueGame.addEventListener('click',()=>{
     document.getElementById('score').innerText = lastScore;
     document.getElementById('life').innerText = 5;
 
-
-    scoreField.classList.add('hidden');
-    playground.classList.remove('hidden');
+    hideShow(scoreField,'add','hidden');
+    hideShow(playground,'remove','hidden');
 })
 
 body.addEventListener('keyup',findElement);
 
 body.addEventListener('keyup',(event)=>{
     if(event.key.toLocaleLowerCase() == 'escape'){
-        playground.classList.add('hidden');
-        scoreField.classList.remove('hidden');
+        hideShow(playground,'add','hidden');
+        hideShow(scoreField,'remove','hidden');
     }
 })
 
@@ -32,13 +31,13 @@ function findElement(event){
     
     for(let repeat of keyboard.childNodes[1].children){
         for(let iteration of repeat.children){
-            iteration.classList.remove('bg-yellow-500');
-            iteration.classList.add('bg-white')
+            hideShow(iteration,'remove','bg-yellow-500');
+            hideShow(iteration,'add','bg-white');
         }
     }
 
-    targetElement.classList.add('bg-yellow-500');
-    targetElement.classList.remove('bg-white');
+    hideShow(targetElement,'add','bg-yellow-500');
+    hideShow(targetElement,'remove','bg-white');
 
     randomWord(targetElement);
 }
@@ -71,8 +70,19 @@ function scoreAndLife(condition,point){
         document.getElementById(`${condition}`).innerText = convertNum - point
 
         if(convertNum <= 0){
-            playground.classList.add('hidden');
-            scoreField.classList.remove('hidden');
+            hideShow(playground,'add','hidden');
+            hideShow(scoreField,'remove','hidden');
         }
+    }
+}
+
+function hideShow(element,position,condition){
+    switch(position){
+        case 'add' :
+            element.classList.add(`${condition}`);
+        break;
+        case 'remove':
+            element.classList.remove(`${condition}`);
+        break;
     }
 }
