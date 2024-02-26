@@ -1,7 +1,27 @@
 const keyboard = document.getElementById('keyboard');
 const displayBoard = document.getElementById('displayBoard');
+const scoreField = document.getElementById('scoreField');
+const continueGame=document.getElementById('continueGame');
+
+continueGame.addEventListener('click',()=>{
+    const lastScore = Number(document.getElementById('finalScore').innerText);
+
+    document.getElementById('score').innerText = lastScore;
+    document.getElementById('life').innerText = 5;
+
+
+    scoreField.classList.add('hidden');
+    playground.classList.remove('hidden');
+})
 
 body.addEventListener('keyup',findElement);
+
+body.addEventListener('keyup',(event)=>{
+    if(event.key.toLocaleLowerCase() == 'escape'){
+        playground.classList.add('hidden');
+        scoreField.classList.remove('hidden');
+    }
+})
 
 randomWord();
 
@@ -45,11 +65,14 @@ function scoreAndLife(condition,point){
 
     if(condition.toLocaleLowerCase() == 'score'){
         document.getElementById(`${condition}`).innerText = convertNum + point
+
+        document.getElementById('finalScore').innerText = document.getElementById('score').innerText;
     }else{
         document.getElementById(`${condition}`).innerText = convertNum - point
-    }
 
-    if(convertNum <= 0){
-        playground.classList.add('hidden');
+        if(convertNum <= 0){
+            playground.classList.add('hidden');
+            scoreField.classList.remove('hidden');
+        }
     }
 }

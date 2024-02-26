@@ -24,7 +24,8 @@
             'poppins':["Poppins", "sans-serif"]
           },
           backgroundImage:{
-            'mainBackground':"linear-gradient(180.00deg, rgb(232, 85, 222) -7.901%,rgb(108, 14, 235) 36.636%,rgba(84, 0, 238, 0.34) 68.886%)"
+            'mainBackground':"linear-gradient(180.00deg, rgb(232, 85, 222) -7.901%,rgb(108, 14, 235) 36.636%,rgba(84, 0, 238, 0.34) 68.886%)",
+            'scoreBackground':"linear-gradient(136.67deg, rgba(255, 255, 255, 0.56) 0%,rgba(152, 151, 151, 0) 102.037%)"
           }
         }
       }
@@ -182,6 +183,31 @@
     </section>
     <!-- conditionArea-finish -->
     </main>
+    <!-- footerArea-start -->
+    <footer>
+      <!-- scoreArea-start -->
+    <section id="scoreField" class="w-[1170px] mx-auto hidden">
+      <div class="w-[396px] mt-[40%] mx-auto flex flex-col items-center rounded-xl bg-scoreBackground">
+        <div>
+          <h2 class="text-poppins text-[64px] font-medium capitalize text-white">
+            score: <span id="finalScore"></span>
+          </h2>
+        </div>
+        <div class="my-4">
+          <button class="text-[#010313] text-2xl font-semibold font-poppins capitalize rounded-xl py-4 px-8 bg-white" id="continueGame">
+            continue
+          </button>
+        </div>
+        <div>
+          <h3 class="text-xl font-medium font-poppins text-white capitalize">
+            practice will make you pro
+          </h3>
+        </div>
+      </div>
+    </section>
+    <!-- scoreArea-finish -->
+    </footer>
+    <!-- footerArea-finish -->
     
     <!-- playgroundArea-finish -->
     <!-- script-file -->

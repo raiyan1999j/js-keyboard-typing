@@ -11,7 +11,7 @@ body.addEventListener('keyup',(event)=>{
 
 playBtn.addEventListener('click',currentPageCustom);
 
-function currentPageCustom(event){
+function currentPageCustom(){
     homepage.classList.add('hidden');
     playground.classList.remove('hidden');
 }
